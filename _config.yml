@@ -1,0 +1,69 @@
+# Site settings
+locale: "en-US"
+title: "athithyaa muthuraman"
+title_separator: "-"
+name: "athithyaa muthuraman"
+masthead_title: "home"
+description: "Personal site of athithyaa muthuraman — projects, writing, and resume."
+url: "https://athithyaam.github.io"
+baseurl: ""
+repository: "athithyaam/athithyaam.github.io"
+
+# Theme
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "dark"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-sitemap
+
+include:
+  - _pages
+
+# Author
+author:
+  name: "athithyaa muthuraman"
+  avatar: "/assets/images/panda-avatar.svg"
+  bio: "Building things and writing about it."
+  location: "Dallas, TX"
+  email: "athithyaa2002@gmail.com"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/athithyaam"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/athithyaam"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Reading Files
+words_per_minute: 200
+
+# Outputting
+permalink: /:categories/:title/
+timezone: America/New_York

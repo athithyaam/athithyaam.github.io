@@ -1,0 +1,111 @@
+---
+---
+
+@charset "utf-8";
+
+// tint the built-in "dark" skin toward a light-blue / light-gray palette
+$background-color: #14171a;
+$text-color: #d6dbe1;
+$primary-color: #8ecae6;
+$link-color: #8ecae6;
+$border-color: #2a2f35;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+// --- custom overrides below ---
+
+// lowercase + slightly italic, sitewide, excluding code
+body {
+  text-transform: lowercase;
+  font-style: italic;
+}
+pre, code, kbd, samp {
+  text-transform: none;
+  font-style: normal;
+}
+
+// wave emoji animation (targets the <span class="wave"> embedded in a post title)
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(14deg); }
+  50% { transform: rotate(-4deg); }
+}
+.wave {
+  display: inline-block;
+  animation: wave 2.2s infinite;
+  transform-origin: 70% 70%;
+  font-style: normal;
+}
+
+// peeking panda widget — pops from a random corner (JS picks which one via
+// a panda-peek--<corner> class), sliding in from whichever edge it's on
+$panda-offset: 24px;
+$panda-hidden: -140px;
+$panda-visible: -20px;
+
+.panda-peek {
+  position: fixed;
+  width: 110px;
+  z-index: 999;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+  transition: top 0.6s ease, bottom 0.6s ease, left 0.6s ease, right 0.6s ease;
+  // safe default so it's off-screen even before JS assigns a corner class
+  right: $panda-offset;
+  bottom: $panda-hidden;
+}
+
+// bottom corners: default orientation, slides up
+.panda-peek--bottom-right, .panda-peek--bottom-left {
+  bottom: $panda-hidden;
+  transform: rotate(0deg);
+}
+.panda-peek--bottom-right { right: $panda-offset; }
+.panda-peek--bottom-left { left: $panda-offset; }
+.panda-peek--bottom-right.panda-peek--visible { bottom: $panda-visible; }
+.panda-peek--bottom-left.panda-peek--visible { bottom: $panda-visible; }
+
+// top corners: flipped so paws/head still read correctly, slides down
+.panda-peek--top-right, .panda-peek--top-left {
+  top: $panda-hidden;
+  transform: rotate(180deg);
+}
+.panda-peek--top-right { right: $panda-offset; }
+.panda-peek--top-left { left: $panda-offset; }
+.panda-peek--top-right.panda-peek--visible { top: $panda-visible; }
+.panda-peek--top-left.panda-peek--visible { top: $panda-visible; }
+
+// mobile: shrink the widget and respect iOS safe-area/home-indicator
+@media (max-width: 480px) {
+  $panda-offset-mobile: 14px;
+  $panda-hidden-mobile: calc(-90px - env(safe-area-inset-bottom, 0px));
+  $panda-visible-mobile: calc(-12px - env(safe-area-inset-bottom, 0px));
+
+  .panda-peek {
+    width: 72px;
+  }
+  .panda-peek--bottom-right, .panda-peek--bottom-left {
+    bottom: $panda-hidden-mobile;
+  }
+  .panda-peek--top-right, .panda-peek--top-left {
+    top: $panda-hidden-mobile;
+  }
+  .panda-peek--bottom-right { right: $panda-offset-mobile; }
+  .panda-peek--bottom-left { left: $panda-offset-mobile; }
+  .panda-peek--top-right { right: $panda-offset-mobile; }
+  .panda-peek--top-left { left: $panda-offset-mobile; }
+  .panda-peek--bottom-right.panda-peek--visible, .panda-peek--bottom-left.panda-peek--visible {
+    bottom: $panda-visible-mobile;
+  }
+  .panda-peek--top-right.panda-peek--visible, .panda-peek--top-left.panda-peek--visible {
+    top: $panda-visible-mobile;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave { animation: none; }
+  .panda-peek { transition: none; }
+}

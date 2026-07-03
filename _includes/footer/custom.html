@@ -1,0 +1,28 @@
+<div id="panda-peek" class="panda-peek">
+  <img src="{{ '/assets/images/panda-peek.svg' | relative_url }}" alt="a shy panda waving hello">
+</div>
+<script>
+  (function () {
+    var panda = document.getElementById('panda-peek');
+    var corners = ['panda-peek--bottom-right', 'panda-peek--bottom-left', 'panda-peek--top-right', 'panda-peek--top-left'];
+    var lastCorner = null;
+
+    function pickCorner() {
+      var choices = corners.filter(function (c) { return c !== lastCorner; });
+      var corner = choices[Math.floor(Math.random() * choices.length)];
+      lastCorner = corner;
+      return corner;
+    }
+
+    function peek() {
+      corners.forEach(function (c) { panda.classList.remove(c); });
+      panda.classList.remove('panda-peek--visible');
+      panda.classList.add(pickCorner());
+      void panda.offsetWidth; // force layout so the new hidden position applies before animating in
+      panda.classList.add('panda-peek--visible');
+      setTimeout(function () { panda.classList.remove('panda-peek--visible'); }, 5000);
+    }
+
+    setInterval(peek, 10000); // first peek at 10s — nothing shows on initial load
+  })();
+</script>
