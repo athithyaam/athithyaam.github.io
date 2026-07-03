@@ -1,7 +1,10 @@
 ---
 title: "Resume"
 permalink: /resume/
+classes: wide
 ---
+
+<div class="resume-content" markdown="1">
 
 <p>
   <a href="{{ '/assets/files/athithyaa-muthuraman-resume.pdf' | relative_url }}" class="btn btn--primary" target="_blank" rel="noopener">Download PDF</a>
@@ -13,13 +16,17 @@ permalink: /resume/
 
 ## Education
 
-**University of Texas at Dallas** — Richardson, TX
-*Master of Science in Business Analytics and Artificial Intelligence*
-August 2024 – December 2025 · Scholar with High Distinction · GPA: 3.92
+<p>
+  <strong>University of Texas at Dallas</strong> — Richardson, TX<br>
+  <em>Master of Science in Business Analytics and Artificial Intelligence</em><br>
+  August 2024 – December 2025 · Scholar with High Distinction · GPA: 3.92
+</p>
 
-**University of Texas at Dallas** — Richardson, TX
-*Bachelor of Science in Biology, Minor in Psychology*
-August 2020 – May 2024 · Dean's List, Academic Excellence Scholarship, Cum Laude · GPA: 3.87
+<p>
+  <strong>University of Texas at Dallas</strong> — Richardson, TX<br>
+  <em>Bachelor of Science in Biology, Minor in Psychology</em><br>
+  August 2020 – May 2024 · Dean's List, Academic Excellence Scholarship, Cum Laude · GPA: 3.87
+</p>
 
 ## Skills
 
@@ -61,3 +68,5 @@ August 2020 – May 2024 · Dean's List, Academic Excellence Scholarship, Cum La
 - Built a multimodal deep learning solution using Vision Transformers (ViT) and Convolutional Neural Networks (CNNs) to analyze neuroimaging data.
 - Performed data preprocessing and augmentation to improve model generalization and optimize training performance.
 - Fine-tuned PyTorch and TensorFlow models using transfer learning, improving predictive accuracy while reducing model training time.
+
+</div>

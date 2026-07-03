@@ -25,11 +25,17 @@ pre, code, kbd, samp {
   font-style: normal;
 }
 
+// resume page content should keep its real capitalization,
+// overriding the sitewide lowercase styling below
+.resume-content {
+  text-transform: none;
+}
+
 // embedded resume PDF viewer
 .resume-pdf-embed {
   width: 100%;
-  height: 80vh;
-  max-height: 900px;
+  height: 92vh;
+  max-height: 1400px;
   margin: 1em 0 2em;
   border: 1px solid $border-color;
   border-radius: 6px;
@@ -43,7 +49,7 @@ pre, code, kbd, samp {
 }
 @media (max-width: 480px) {
   .resume-pdf-embed {
-    height: 70vh;
+    height: 75vh;
   }
 }
 
