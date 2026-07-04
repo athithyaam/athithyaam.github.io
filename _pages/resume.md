@@ -1,5 +1,5 @@
 ---
-title: "Resume"
+title: "Resume (a small sampling of my capabilities)"
 permalink: /resume/
 classes: wide
 ---
