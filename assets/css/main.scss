@@ -31,6 +31,18 @@ pre, code, kbd, samp {
   text-transform: none;
 }
 
+// blog year-index entries (e.g. "2026  1") should fill the full row
+// instead of being squeezed into one of the theme's 2-3 grid columns
+.taxonomy__index {
+  grid-template-columns: 1fr;
+}
+
+// push "back to top" further down from the post list and further right
+.back-to-top {
+  margin: 2em 0 1em;
+  padding-right: 0.5em;
+}
+
 // embedded resume PDF viewer
 .resume-pdf-embed {
   width: 100%;
