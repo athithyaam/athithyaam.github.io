@@ -8,7 +8,7 @@
   <circle cx="102" cy="24" r="13" fill="#20242a"/>
   <ellipse cx="54" cy="58" rx="12" ry="15" fill="#20242a" transform="rotate(-8 54 58)"/>
   <ellipse cx="86" cy="58" rx="12" ry="15" fill="#20242a" transform="rotate(8 86 58)"/>
-  <circle cx="54" cy="60" r="4" fill="#8ecae6"/>
-  <circle cx="86" cy="60" r="4" fill="#8ecae6"/>
+  <circle cx="54" cy="60" r="4" fill="#c2c6fb"/>
+  <circle cx="86" cy="60" r="4" fill="#c2c6fb"/>
   <ellipse cx="70" cy="72" rx="4.5" ry="3.2" fill="#20242a"/>
 </svg>

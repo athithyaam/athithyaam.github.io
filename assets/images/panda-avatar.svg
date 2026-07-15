@@ -4,8 +4,8 @@
   <circle cx="80" cy="18" r="14" fill="#20242a"/>
   <ellipse cx="33" cy="52" rx="13" ry="16" fill="#20242a" transform="rotate(-10 33 52)"/>
   <ellipse cx="67" cy="52" rx="13" ry="16" fill="#20242a" transform="rotate(10 67 52)"/>
-  <circle cx="33" cy="55" r="4.5" fill="#8ecae6"/>
-  <circle cx="67" cy="55" r="4.5" fill="#8ecae6"/>
+  <circle cx="33" cy="55" r="4.5" fill="#c2c6fb"/>
+  <circle cx="67" cy="55" r="4.5" fill="#c2c6fb"/>
   <ellipse cx="50" cy="68" rx="5" ry="3.5" fill="#20242a"/>
   <path d="M50 71 q0 6 -8 8 M50 71 q0 6 8 8" stroke="#20242a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
 </svg>

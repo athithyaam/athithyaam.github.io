@@ -1,9 +1,9 @@
 # Site settings
 locale: "en-US"
-title: "athithyaa muthuraman"
+title: "Athithyaa's Lair"
 title_separator: "-"
-name: "athithyaa muthuraman"
-masthead_title: "home"
+name: "Athithyaa Muthuraman"
+masthead_title: "Athithyaa Muthuraman"
 description: "Personal site of athithyaa muthuraman — projects, writing, and resume."
 url: "https://athithyaam.github.io"
 baseurl: ""
@@ -26,11 +26,12 @@ include:
 
 # Author
 author:
-  name: "athithyaa muthuraman"
+  name: "Athithyaa Muthuraman"
   avatar: "/assets/images/panda-avatar.svg"
-  bio: "Building things and writing about it."
+  bio: "Building things and writing about it, one project at a time."
   location: "Dallas, TX"
   email: "athithyaa2002@gmail.com"
+  linkedin: "athithyaa-muthuraman"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

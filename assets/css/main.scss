@@ -3,32 +3,338 @@
 
 @charset "utf-8";
 
-// tint the built-in "dark" skin toward a light-blue / light-gray palette
-$background-color: #14171a;
-$text-color: #d6dbe1;
-$primary-color: #8ecae6;
-$link-color: #8ecae6;
-$border-color: #2a2f35;
+// white / black / periwinkle palette — dark mode (black bg, white text,
+// a lighter periwinkle than the light-mode version so it pops against the
+// near-black background). The lighter periwinkle now also tints the
+// muted text and borders, instead of being confined to links/buttons.
+$background-color: #15161c;
+$text-color: #e7e8f0;
+$muted-text-color: #aab0e8;
+$primary-color: #c2c6fb;
+$link-color: #c2c6fb;
+$border-color: #4a4d7a;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
 // --- custom overrides below ---
 
-// lowercase + slightly italic, sitewide, excluding code
+// font pairing (reference: simmeeg.github.io/quantprojects) — IBM Plex Sans
+// for headings/body, IBM Plex Mono for nav links, small section labels,
+// and post metadata, minimalist "research paper" feel
+$sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
 body {
-  text-transform: lowercase;
-  font-style: italic;
-}
-pre, code, kbd, samp {
-  text-transform: none;
-  font-style: normal;
+  font-family: $sans;
 }
 
-// resume page content should keep its real capitalization,
-// overriding the sitewide lowercase styling below
-.resume-content {
-  text-transform: none;
+// the theme scales the root font-size up to 22px on wide screens, which
+// makes everything feel oversized — steady it to a smaller, gentler scale
+html {
+  font-size: 17px;
+}
+@media (min-width: 48em) {
+  html { font-size: 17px; }
+}
+@media (min-width: 64em) {
+  html { font-size: 18px; }
+}
+@media (min-width: 80em) {
+  html { font-size: 19px; }
+}
+
+h1, h2, h3, h4, h5, h6,
+.masthead-title {
+  font-family: $sans;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.015em;
+}
+
+// bio line under the name/avatar — the one spot italics stay, as a quiet
+// personal signature rather than sitewide styling
+.author__bio {
+  font-style: italic;
+}
+
+// masthead nav links ("About", "Projects", ...) — small mono labels
+.greedy-nav a:not(.site-title) {
+  font-family: $mono;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+// brand name in the header — same mono font as the nav links next to it
+.greedy-nav a.site-title {
+  font-family: $mono;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+// section labels ("Recent Posts", "What I Work On", ...), page titles on
+// every other tab (About, Projects, Resume, Blog), and in-page subheadings
+// (About's "What I'm into" / "Elsewhere") — small uppercase tracked mono,
+// matching "Welcome to my lair" on the home page
+.archive__subtitle,
+.section-label,
+.page__title,
+.page__content h2 {
+  font-family: $mono;
+  font-weight: 500;
+  font-size: 0.8em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $text-color;
+  padding-bottom: 0.15em;
+  margin-bottom: 0;
+}
+
+.section-label,
+.page__title,
+.page__content h2 {
+  border-bottom: 1px solid $border-color;
+}
+
+.section-label {
+  margin-top: 4em;
+}
+
+// same gap everywhere a heading is immediately followed by content — the
+// same 1.5em used between "Currently" and "Product Analyst" on the home
+// page: page title → first paragraph, and each in-page subheading →
+// whatever follows it (paragraph or list)
+.page__content > p:first-child,
+.page__content h2 + p,
+.page__content h2 + ul {
+  margin-top: 1.5em;
+}
+
+// the first heading on a page (home's "Welcome to my lair", or any
+// page's title) doesn't need the same big top margin as section labels
+// further down the page
+.section-label.first-label,
+.page__title {
+  margin-top: 0.5em;
+}
+
+// home page: the auto-generated page__title h1 ("Hi, I'm Athithyaa!") is
+// replaced visually by the "Welcome to my lair" section label instead —
+// the title front matter is kept (for the browser tab / meta tags) but
+// hidden on the page itself
+.no-page-title .page__title {
+  display: none;
+}
+
+// "Currently" role highlight — title/company/date header plus bulleted
+// impact points, mono date matching the reference site's card metadata
+.current-role {
+  margin-top: 1.5em;
+}
+.current-role-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-bottom: 0.9em;
+}
+.current-role-head h3 {
+  margin: 0;
+  font-size: 1.15em;
+}
+.current-role .date {
+  font-family: $mono;
+  font-size: 0.8em;
+  color: $muted-text-color;
+  white-space: nowrap;
+}
+.current-role ul.points {
+  margin: 0;
+  padding-left: 1.2em;
+  color: $text-color;
+}
+.current-role ul.points li {
+  margin-bottom: 0.6em;
+  font-size: 0.95em;
+  line-height: 1.55;
+}
+.current-role ul.points li::marker {
+  color: $primary-color;
+}
+
+// pull-quote below "What I Work On"
+.home-quote {
+  margin: 3em 0 0;
+  padding: 1.25em 0 1.25em 1.25em;
+  border-left: 2px solid $primary-color;
+  font-family: $sans;
+  font-style: italic;
+  font-size: 1.1em;
+  color: $text-color;
+}
+.home-quote cite {
+  display: block;
+  margin-top: 0.5em;
+  font-family: $mono;
+  font-style: normal;
+  font-size: 0.7em;
+  letter-spacing: 0.04em;
+  color: $muted-text-color;
+}
+
+// post date / read-time metadata — small mono, same treatment as the
+// reference site's dates
+.page__meta, .comment__date {
+  font-family: $mono;
+}
+
+// remaining theme elements that declare their own font-family at higher
+// specificity than a bare h1-h6/body selector, so the sans/mono pairing
+// above doesn't reach them on its own — post titles, sidebar bio/links,
+// lead text, and alert boxes, across every page
+.archive__item-title,
+.page__lead,
+.sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6,
+.sidebar p, .sidebar li,
+.author__urls-wrapper,
+.notice, .notice--primary, .notice--info, .notice--warning, .notice--success, .notice--danger {
+  font-family: $sans;
+}
+
+.archive__item-title {
+  letter-spacing: -0.015em;
+}
+
+// buttons and pagination — small mono labels, matching the reference
+// site's bordered mono pill buttons (font-weight pinned to 500, the
+// heaviest weight actually loaded, so the browser doesn't fake-bold it)
+.btn,
+.pagination li a,
+.pagination--pager {
+  font-family: $mono;
+  font-weight: 500;
+}
+
+// footer copyright line — small mono, matching the reference site's
+// mono foot-note
+.page__footer-copyright {
+  font-family: $mono;
+}
+
+// code blocks — IBM Plex Mono instead of the theme's default monospace
+// stack, matching the reference site's code styling
+tt, code, kbd, samp, pre,
+div.highlighter-rouge, figure.highlight {
+  font-family: $mono;
+}
+
+// hide the name heading in the sidebar author box (avatar/bio/links stay)
+.sidebar .author__name {
+  display: none;
+}
+
+// home page intro paragraph — smaller than the theme's large scaled-up
+// heading/body text
+.page__content p.home-intro {
+  margin-top: 1.5em;
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: $text-color;
+}
+
+// tighten the gap between the "Recent Posts" divider line and the first
+// post title right after it
+.archive__subtitle + .list__item .archive__item-title {
+  margin-top: 0;
+}
+
+// sidebar panel: same periwinkle as the "Download PDF" button, so text
+// needs to switch to dark (like the button's own auto-contrasted label)
+// instead of the white used against the darker page background
+.sidebar {
+  background-color: $primary-color;
+  padding: 1.75em 1.5em;
+  border-radius: 8px;
+  // the theme dims the sidebar to 75% opacity until hovered; keep it at
+  // full strength so the panel stays a solid, consistent color
+  opacity: 1;
+}
+
+.sidebar p, .sidebar li, .sidebar .author__content, .sidebar a {
+  color: #1c1e24;
+}
+
+// About and Resume: the panel stays put in the page instead of sticking
+// to the top of the viewport as you scroll
+@media (min-width: 64em) {
+  .no-sticky-sidebar .sidebar.sticky {
+    position: static;
+    top: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+// on phones the sidebar isn't stretched/centered like the desktop panel
+// (that only kicks in at 64em+), so its height is just padding + content —
+// keep it as one compact row (avatar + bio side by side, centered) instead
+// of stacking each piece on its own line, which is what was making it tall
+@media (max-width: 63.9375em) {
+  .sidebar {
+    padding: 0.4em 0.6em;
+    text-align: center;
+  }
+  .sidebar > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 0.3em 0;
+  }
+  .author__avatar {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+  .author__avatar img {
+    max-width: 28px;
+  }
+  .author__content {
+    display: block;
+    padding: 0;
+    text-align: left;
+  }
+  .author__bio {
+    margin: 0;
+  }
+  // Follow button (and its location/GitHub/LinkedIn/Email dropdown) —
+  // dropped on mobile to keep the panel compact; those links are still
+  // reachable via the About page's "Elsewhere" section
+  .author__urls-wrapper {
+    display: none;
+  }
+}
+
+// keep the sidebar panel a consistent height on every page — tied to the
+// viewport (same formula the theme already uses for its sticky max-height),
+// not the length of that page's main content, which varies a lot between
+// e.g. the home post list and a short page like About
+@media (min-width: 64em) {
+  #main {
+    display: flex;
+    align-items: stretch;
+    column-gap: 2.5em;
+  }
+  .sidebar {
+    float: none;
+    min-height: calc(100vh - 4em);
+  }
+  .archive {
+    float: none;
+  }
 }
 
 // blog year-index entries (e.g. "2026  1") should fill the full row
@@ -37,10 +343,22 @@ pre, code, kbd, samp {
   grid-template-columns: 1fr;
 }
 
-// push "back to top" further down from the post list and further right
+// hidden for now
 .back-to-top {
-  margin: 2em 0 1em;
-  padding-right: 0.5em;
+  display: none;
+}
+
+// space below the page title, matching "Currently" → "Product Analyst"
+// on the home page
+.page__content > .resume-content {
+  margin-top: 1.5em;
+}
+
+// same gap between a post's title and its date/read-time meta line (the
+// theme pulls this up with a negative margin by default)
+.page__title + .page__meta,
+.page__title + .comment__date {
+  margin-top: 1.5em;
 }
 
 // embedded resume PDF viewer

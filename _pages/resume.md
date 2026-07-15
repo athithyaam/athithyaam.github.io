@@ -1,7 +1,7 @@
 ---
-title: "Resume (or rather a small sampling of my capabilities)"
+title: "Check out my resume!"
 permalink: /resume/
-classes: wide
+classes: wide no-sticky-sidebar
 ---
 
 <div class="resume-content" markdown="1">
