@@ -249,20 +249,18 @@ div.highlighter-rouge, figure.highlight {
   margin-top: 0;
 }
 
-// sidebar panel: same periwinkle as the "Download PDF" button, so text
-// needs to switch to dark (like the button's own auto-contrasted label)
-// instead of the white used against the darker page background
+// no panel background — sidebar text blends into the page like the rest
+// of the site, so it goes back to the same light text color as everywhere
+// else instead of the dark text used for contrast on the periwinkle panel
 .sidebar {
-  background-color: $primary-color;
   padding: 1.75em 1.5em;
-  border-radius: 8px;
   // the theme dims the sidebar to 75% opacity until hovered; keep it at
-  // full strength so the panel stays a solid, consistent color
+  // full strength
   opacity: 1;
 }
 
 .sidebar p, .sidebar li, .sidebar .author__content, .sidebar a {
-  color: #1c1e24;
+  color: $text-color;
 }
 
 // About and Resume: the panel stays put in the page instead of sticking
