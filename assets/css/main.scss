@@ -74,15 +74,15 @@ h1, h2, h3, h4, h5, h6,
 
 // section labels ("Recent Posts", "What I Work On", ...), page titles on
 // every other tab (About, Projects, Resume, Blog), and in-page subheadings
-// (About's "What I'm into" / "Elsewhere") — small uppercase tracked mono,
-// matching "Welcome to my lair" on the home page
+// (About's "What I'm into" / "Elsewhere") — uppercase tracked mono, sized
+// a bit above body content, matching "Welcome to my lair" on the home page
 .archive__subtitle,
 .section-label,
 .page__title,
 .page__content h2 {
   font-family: $mono;
   font-weight: 500;
-  font-size: 0.8em;
+  font-size: 1.15em;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: $text-color;
