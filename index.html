@@ -8,6 +8,13 @@ excerpt: "Welcome to my lair — writing about my academic pivot from biology to
 <h2 class="section-label first-label">Welcome to my lair 🐼</h2>
 <p class="home-intro">This website/blog will serve as my hub to write about, well, quite a lot. I'll be sharing personal experiences on my academic pivot from biology to business analytics, current projects I'm working on, as well as my journey towards AI engineering! I hope anyone who stops by can leave with some new perspective :)</p>
 
+<h2 class="section-label">Recent Posts</h2>
+<div class="entries-list">
+  {% for post in site.posts limit:3 %}
+    {% include archive-single.html type="list" %}
+  {% endfor %}
+</div>
+
 <h2 class="section-label">Currently</h2>
 <div class="current-role">
   <div class="current-role-head">
@@ -25,10 +32,3 @@ excerpt: "Welcome to my lair — writing about my academic pivot from biology to
   “The secret of getting ahead is getting started.”
   <cite>— Mark Twain</cite>
 </blockquote>
-
-<h2 class="section-label">Recent Posts</h2>
-<div class="entries-list">
-  {% for post in site.posts limit:3 %}
-    {% include archive-single.html type="list" %}
-  {% endfor %}
-</div>
