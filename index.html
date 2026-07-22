@@ -25,3 +25,10 @@ excerpt: "Welcome to my lair — writing about my academic pivot from biology to
   “The secret of getting ahead is getting started.”
   <cite>— Mark Twain</cite>
 </blockquote>
+
+<h2 class="section-label">Recent Posts</h2>
+<div class="entries-list">
+  {% for post in site.posts limit:3 %}
+    {% include archive-single.html type="list" %}
+  {% endfor %}
+</div>
