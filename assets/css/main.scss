@@ -461,7 +461,52 @@ $panda-visible: -20px;
   }
 }
 
+// reading progress bar — mobile-only, blog posts only. A thin black/white
+// track (panda-colored) fills as you scroll the article, with a 🐼 emoji
+// riding the leading edge of the fill.
+.reading-progress {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+.reading-progress__track {
+  position: relative;
+  height: 4px;
+  background: #000;
+}
+.reading-progress__fill {
+  height: 100%;
+  width: 0%;
+  background: #fff;
+  transition: width 0.08s linear;
+}
+.reading-progress__panda {
+  position: absolute;
+  top: 4px;
+  left: 0%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: left 0.08s linear;
+}
+
+// "mobile" here matches the breakpoint the rest of the site already uses
+// for switching into its single-column mobile layout
+@media (max-width: 63.9375em) {
+  .reading-progress {
+    display: block;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wave { animation: none; }
   .panda-peek { transition: none; }
+  .reading-progress__fill,
+  .reading-progress__panda {
+    transition: none;
+  }
 }

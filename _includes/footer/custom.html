@@ -1,3 +1,31 @@
+{% if page.categories %}
+<div class="reading-progress" id="reading-progress" aria-hidden="true">
+  <div class="reading-progress__track">
+    <div class="reading-progress__fill" id="reading-progress-fill"></div>
+    <span class="reading-progress__panda" id="reading-progress-panda">🐼</span>
+  </div>
+</div>
+<script>
+  (function () {
+    var fill = document.getElementById('reading-progress-fill');
+    var panda = document.getElementById('reading-progress-panda');
+    if (!fill || !panda) return;
+
+    function update() {
+      var doc = document.documentElement;
+      var scrollTop = doc.scrollTop || document.body.scrollTop;
+      var scrollable = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+      var progress = scrollable > 0 ? Math.min(100, Math.max(0, (scrollTop / scrollable) * 100)) : 0;
+      fill.style.width = progress + '%';
+      panda.style.left = progress + '%';
+    }
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+  })();
+</script>
+{% endif %}
 <div id="panda-peek" class="panda-peek">
   <img src="{{ '/assets/images/panda-peek.svg' | relative_url }}" alt="a shy panda waving hello">
 </div>
