@@ -24,10 +24,6 @@ $border-color: #4a4d7a;
 // and post metadata, minimalist "research paper" feel
 $sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 $mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-// headings — a distinct, minimal geometric sans (Space Grotesk) so every
-// header on every page reads as clearly bigger/other than body copy,
-// instead of just being a bolded version of the body font
-$heading: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
 body {
   font-family: $sans;
@@ -48,23 +44,13 @@ html {
   html { font-size: 19px; }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $heading;
+h1, h2, h3, h4, h5, h6,
+.masthead-title {
+  font-family: $sans;
   font-weight: 600;
   font-style: normal;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.015em;
 }
-
-// :not(.masthead-title) — the site brand name in the header is also an h1
-// tag, but it keeps its own smaller mono nav styling further down instead
-// of picking up the new bigger content-heading size
-h1:not(.masthead-title) { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.25em; }
-h4 { font-size: 1.125em; }
-h5 { font-size: 1.0625em; }
-h6 { font-size: 1em; }
 
 // bio line under the name/avatar — the one spot italics stay, as a quiet
 // personal signature rather than sitewide styling
@@ -88,24 +74,20 @@ h6 { font-size: 1em; }
 
 // section labels ("Recent Posts", "What I Work On", ...), page titles on
 // every other tab (About, Projects, Resume, Blog), and in-page subheadings
-// (About's "What I'm into" / "Elsewhere") — big minimal heading font,
-// clearly distinct from body copy
+// (About's "What I'm into" / "Elsewhere") — small uppercase tracked mono,
+// matching "Welcome to my lair" on the home page
 .archive__subtitle,
 .section-label,
 .page__title,
 .page__content h2 {
-  font-family: $heading;
-  font-weight: 600;
-  font-size: 1.5em;
-  letter-spacing: -0.02em;
-  text-transform: none;
+  font-family: $mono;
+  font-weight: 500;
+  font-size: 0.8em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: $text-color;
   padding-bottom: 0.15em;
   margin-bottom: 0;
-}
-
-.page__title {
-  font-size: 2em;
 }
 
 .section-label,
@@ -209,26 +191,19 @@ h6 { font-size: 1em; }
 
 // remaining theme elements that declare their own font-family at higher
 // specificity than a bare h1-h6/body selector, so the sans/mono pairing
-// above doesn't reach them on its own — sidebar bio/links, lead text, and
-// alert boxes, across every page
+// above doesn't reach them on its own — post titles, sidebar bio/links,
+// lead text, and alert boxes, across every page
+.archive__item-title,
 .page__lead,
+.sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6,
 .sidebar p, .sidebar li,
 .author__urls-wrapper,
 .notice, .notice--primary, .notice--info, .notice--warning, .notice--success, .notice--danger {
   font-family: $sans;
 }
 
-// post titles in listings (e.g. "Recent Posts") — same big heading font
-// as every other header on the site
-.archive__item-title,
-.sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6 {
-  font-family: $heading;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
 .archive__item-title {
-  font-size: 1.3em;
+  letter-spacing: -0.015em;
 }
 
 // buttons and pagination — small mono labels, matching the reference
