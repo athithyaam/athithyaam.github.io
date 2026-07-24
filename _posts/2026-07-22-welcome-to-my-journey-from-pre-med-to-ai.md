@@ -15,7 +15,7 @@ If you've read my [About](/about/) page, you already know that I wasn't born in 
 
 For as long as I can remember, I wanted to become a doctor. Medicine felt like the perfect intersection of science, problem-solving, and service. I never really considered another path. Looking back, that was probably a bit of a risk, but at the time, I was completely committed to the goal.
 
-I ended up at UT Dallas, majoring in Biology, fully committed to pre-med. Since I couldn't legally work, I poured myself into everything else within my control: ER volunteering, neuroscience research, a medical assistant job, leadership roles, a strong GPA. I was fully invested in becoming a physician.
+I ended up at UT Dallas, majoring in Biology, fully committed to pre-med. Since I couldn't legally work at the time, I poured myself into everything else within my control: ER volunteering, neuroscience research, medical scribing, leadership roles, a strong GPA. I was fully invested in becoming a physician.
 
 Then, with three semesters left, everything changed.
 
@@ -31,7 +31,7 @@ Every road seemed to lead me to the same place: AI.
 
 Ironically, growing up, I swore I'd never work in tech. I used to watch my mom sit in front of a computer typing strings of letters and numbers that made no sense to me, and I could never imagine doing the same. But life has a funny way of changing your perspective. I was twenty-one, and I figured if I could dedicate years to preparing for medicine, I could dedicate myself to learning something new. And so, I enrolled in UTD's Business Analytics and Artificial Intelligence master's program.
 
-Rebuilding from scratch meant learning technical skills I didn't have and, just as importantly, learning to network in ways I never had to before - mentorship programs, a data visualization club, every career fair I could find around DFW. Making such a drastic pivot gave me an odd kind of confidence: if I could walk away from years of preparation for medicine and start over completely, I could learn anything I put my mind to.
+Rebuilding from scratch meant learning technical skills I didn't have and, just as importantly, learning to network in ways I never had to before - mentorship programs, a data visualization club, and every career fair I could find around DFW. Making such a drastic pivot gave me an odd kind of confidence: if I could walk away from years of preparation for medicine and start over completely, I could learn anything I put my mind to.
 
 The job market didn't make it easy. Internship competition was brutal, and everyone seemed to be chasing the same roles. Working part-time at the Career Management Center helped; it gave me a look at hiring from the other side of the table.
 
@@ -41,7 +41,7 @@ That role gave me exactly what I needed - data, programming, analytics, and busi
 
 Getting the job wasn't the finish line. If anything, it was the start of another chapter.
 
-Today, six months in, I'm setting my sights on something new. As I keep building knowledge in the ATM payments and networks space, I want to bridge business and AI - my long-term goal is to become an AI engineer, through my work and through what I build on my own time.
+Today, six months in, I'm setting my sights on something new. As I keep building knowledge in the ATM payments and networks space, I want to bridge finance and AI - my long-term goal is to become a fintech AI engineer, through my work and through what I build on my own time.
 
 This space will be a place for me to document what I'm learning, share projects I'm working on, reflect on mistakes and successes, and track my growth as I continue down this path. I have no idea exactly where this journey will take me, but looking back, I've learned that some of the best opportunities come from the plans that don't work out.
 
