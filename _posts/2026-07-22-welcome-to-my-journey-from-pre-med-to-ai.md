@@ -6,7 +6,7 @@ categories:
 classes: wide
 share: false
 related: false
-excerpt: "Check out my first blog post — my journey from Biology pre-med student to (aspiring) AI engineer!"
+excerpt: "Check out my first blog post - my journey from Biology pre-med student to (aspiring) AI engineer!"
 ---
 
 I've spent quite a bit of time thinking about what to write for my first post, and in the end, I realized there was no better place to start than by sharing a bit about myself and the journey that brought me here.
