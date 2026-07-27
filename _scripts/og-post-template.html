@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1200px;
+    height: 630px;
+    background: #15161c;
+    font-family: "IBM Plex Sans", sans-serif;
+    overflow: hidden;
+  }
+
+  .card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px;
+  }
+
+  .glow {
+    position: absolute;
+    top: -160px;
+    right: -160px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(194,198,251,0.16) 0%, rgba(194,198,251,0) 70%);
+  }
+
+  .border-accent {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 6px;
+    background: #c2c6fb;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #eef1f4;
+    flex-shrink: 0;
+  }
+
+  .category {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: #aab0e8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .title {
+    font-size: 58px;
+    font-weight: 700;
+    color: #e7e8f0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    max-width: 1000px;
+    /* clamp to 3 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .byline {
+    position: absolute;
+    bottom: 70px;
+    left: 90px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    color: #4a4d7a;
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow"></div>
+    <div class="border-accent"></div>
+
+    <div class="eyebrow">
+      <svg class="avatar" viewBox="0 0 100 100" role="img" aria-label="panda avatar">
+        <circle cx="50" cy="50" r="50" fill="#eef1f4"/>
+        <circle cx="20" cy="18" r="14" fill="#20242a"/>
+        <circle cx="80" cy="18" r="14" fill="#20242a"/>
+        <ellipse cx="33" cy="52" rx="13" ry="16" fill="#20242a" transform="rotate(-10 33 52)"/>
+        <ellipse cx="67" cy="52" rx="13" ry="16" fill="#20242a" transform="rotate(10 67 52)"/>
+        <circle cx="33" cy="55" r="4.5" fill="#c2c6fb"/>
+        <circle cx="67" cy="55" r="4.5" fill="#c2c6fb"/>
+        <ellipse cx="50" cy="68" rx="5" ry="3.5" fill="#20242a"/>
+        <path d="M50 71 q0 6 -8 8 M50 71 q0 6 8 8" stroke="#20242a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="category">__CATEGORY__</div>
+    </div>
+
+    <div class="title">__TITLE__</div>
+
+    <div class="byline">athithyaam.github.io — Athithyaa Muthuraman</div>
+  </div>
+</body>
+</html>
